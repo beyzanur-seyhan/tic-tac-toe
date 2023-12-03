@@ -6,9 +6,53 @@
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
-    <script src="javascript/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="javascript/script.js" defer></script>
 </head>
 <body>
-    
+    <header>
+        <h1>
+            <span>Tic</span> 
+            <span>Tac</span> 
+            <span>Toe</span>
+        </h1>
+        <button>
+            <span>Reset Game</span>
+            <img src="image/icon-reset.svg" alt="icon reset">
+        </button>
+    </header>
+    <main>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </main>
+    <footer>
+        <div>
+            <span>Round:</span>
+            <span>1</span>
+        </div>
+        <div>
+            <div>
+                <div>You (X)</div>
+                <div id="score-user">0</div>
+            </div>
+            <div>
+                <div>vs</div>
+                <div>LINE</div>
+            </div>
+            <div>
+                <div>Computer (O)</div>
+                <div id="score-computer">0</div> 
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
