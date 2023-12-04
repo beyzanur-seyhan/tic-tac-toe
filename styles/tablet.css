@@ -1,0 +1,52 @@
+@media screen and (max-width: 1280px) and (min-width: 601px) {
+    body {
+        padding-left: 73px;
+        padding-right: 73px;
+        padding-top: 23px;
+        padding-bottom: 12px;
+    }
+
+    header {
+        row-gap: 23px;
+    }
+
+    h1 {
+        font-size: 64px;
+    }
+
+    .button-reset {
+        width: 126px;
+    }
+
+    .button-reset span {
+        font-weight: 600;
+    }
+
+    .button-reset img {
+        width: 15.24px;
+        height: 16.8px;
+    }
+
+    main {
+       margin-top: 45px;
+       margin-bottom: 29.67px; 
+    }
+
+    main div {
+        height: 113px;
+    }
+
+    .scores {
+        margin-top: 18px;
+        height: 65px;
+    }
+
+    #score-user {
+        height: 24px;
+    }
+
+    .score-user div:first-child, 
+    .score-computer div:first-child {
+        font-size: 20px;
+    }
+}
