@@ -44,3 +44,56 @@ h1 {
     width: 15.25px;
     height: 16.79px;
 }
+
+main {
+    margin-top: 54px;
+    margin-bottom: 46px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+main div {
+    height: 96px;
+    border-left: 9.41px solid #00A193;
+    border-bottom: 9.41px solid #00A193;
+}
+
+main div:nth-child(1), 
+main div:nth-child(4), 
+main div:nth-child(7) {
+    border-left: none;
+}
+
+main div:nth-child(7), 
+main div:nth-child(8), 
+main div:nth-child(9) {
+    border-bottom: none;
+}
+
+.round {
+    display: flex;
+    column-gap: 11px;
+    justify-content: center;
+    align-items: center;
+}
+
+.round > span {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.round > span:first-child {
+    color: #FFF;
+}
+
+.round > span:last-child {
+    color: #038075;
+    background-color: #FFFFFF;
+    width: 20px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
