@@ -97,3 +97,58 @@ main div:nth-child(9) {
     border-radius: 4px;
 }
 
+.scores {
+    margin-top: 24px;
+    background-color: #00867B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 58px;
+    border-radius: 8px;
+}
+
+.score-user, .score-computer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 8px;
+    color: #FFFFFF;
+}
+
+#score-user, #score-computer {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.divider {
+    width: 92px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow-y: hidden;
+}
+
+.divider div {
+    position: absolute;
+}
+
+.divider div:first-child {
+    z-index: 1;
+    font-weight: 700;
+    font-size: 24px;
+    left: 31px;
+    color: #03655D;
+    text-shadow:
+    -1px -1px 0 #FFF,  
+    1px -1px 0 #FFF,
+    -1px 1px 0 #FFF,
+     1px 1px 0 #FFF;
+}
+
+.divider .line {
+    width: 69.32px;
+    border: 2px solid #03655D;
+    transform: rotate(119deg);
+}
