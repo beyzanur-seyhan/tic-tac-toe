@@ -14,9 +14,9 @@ const setXorO = (order) => {
     cellValues[order] = userOrder;
 
     const imageTag = document.createElement('img');
-    
-    if(userOrder === 'X') {
-        imageTag.src = 'image/shape-X.svg';
-        selectedCell.appendChild(imageTag);
-    }
+
+    imageTag.src = `image/shape-${userOrder}.svg`;
+    selectedCell.appendChild(imageTag);
+
+    userOrder = userOrder === 'X' ? 'O' : 'X';
 }
