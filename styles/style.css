@@ -46,16 +46,17 @@ h1 {
 }
 
 main {
+    background-color: #00A193;
     margin-top: 54px;
     margin-bottom: 46px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    gap: 10px;
 }
 
 main div {
     height: 96px;
-    border-left: 9.41px solid #00A193;
-    border-bottom: 9.41px solid #00A193;
+    background-color: #00BDAD;
     display: flex;
     justify-content: center;
     align-items: center;
