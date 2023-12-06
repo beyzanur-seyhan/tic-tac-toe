@@ -6,7 +6,7 @@ let userOrder = 'X';
 document.getElementById('score-user').textContent = scoreUser;
 document.getElementById('score-computer').textContent = scoreComputer;
 
-const setXorO = (order) => {
+const setUserFlag = (order) => {
     if(cellValues[order]) return;
 
     const divContainer = document.getElementsByTagName('main')[0];
