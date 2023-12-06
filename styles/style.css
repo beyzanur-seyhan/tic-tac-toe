@@ -56,6 +56,9 @@ main div {
     height: 96px;
     border-left: 9.41px solid #00A193;
     border-bottom: 9.41px solid #00A193;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 main div:nth-child(1), 
