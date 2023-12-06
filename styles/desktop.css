@@ -1,0 +1,68 @@
+@media screen and (min-width: 1280px) {
+    body {
+        padding-top: 29px;
+        padding-bottom: 13px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    header {
+        row-gap: 14px;
+    }
+
+    h1 {
+        font-size: 81px;
+    }
+
+    .button-reset {
+        width: 158px;
+        height: 38px;
+    }
+
+    .button-reset span {
+        font-size: 20px;
+    }
+
+    .button-reset img {
+        width: 19px;
+        height: 20px;
+    }
+
+    main {
+        width: 389.84px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 52px;
+        margin-bottom: 47.58px;
+    }
+
+    main div {
+        height: 136px;
+    }
+
+    .round > span:first-child {
+        font-size: 24px;
+    }
+
+    .round > span:last-child {
+        height: 24px;
+        font-size: 20px;
+    }
+
+    .scores {
+        margin-top: 16px;
+        width: 456px;
+        height: 65px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .score-user > div:first-child, 
+    .score-computer > div:first-child {
+        font-size: 20px;
+    }
+
+    #score-user, #score-computer {
+        font-size: 24px;
+    }
+}
