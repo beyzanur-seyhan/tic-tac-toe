@@ -1,13 +1,13 @@
 const cellValues = [];
 let scoreUser = 0;
 let scoreComputer = 0;
-let userOrder = 'X';
 
 document.getElementById('score-user').textContent = scoreUser;
 document.getElementById('score-computer').textContent = scoreComputer;
 
 const createFlag = (order,flag='X') => {
-    if(cellValues[order] && flag === 'O') turnComputer(1);
+    setColorToText(flag) 
+
     if(cellValues[order]) return;
 
     const divContainer = document.getElementsByTagName('main')[0];
@@ -20,8 +20,27 @@ const createFlag = (order,flag='X') => {
     selectedCell.appendChild(imageTag);
 }
 
-const turnComputer = (time=1000) => {
+const findRandomEmptyIndex = () => {
+ const isEmpty = [];
+
+ for (let i = 0; i < 8; i++) {
+   if(cellValues[i]) continue;
+   isEmpty.push(i);
+ }
+
+ return isEmpty[Math.floor(Math.random() * isEmpty.length)];
+}
+
+const turnComputer = async() => {
     setTimeout(()=>{
-        createFlag(Math.round(Math.random() * 8), 'O')
-    },time)
+        createFlag(findRandomEmptyIndex(), 'O');
+    },1000)
+}
+
+const setColorToText = (flag) => {
+    if(flag === 'X') {
+        document.getElementsByClassName(`score-user`)[0].style = 'color:black';
+    } else {
+        document.getElementsByClassName(`score-user`)[0].style = ''
+    }
 }
