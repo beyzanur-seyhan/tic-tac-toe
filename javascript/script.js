@@ -32,15 +32,25 @@ const findRandomEmptyIndex = () => {
 }
 
 const turnComputer = async() => {
-    setTimeout(()=>{
+   await setTimeout(()=>{
         createFlag(findRandomEmptyIndex(), 'O');
     },1000)
+
+    await setTimeout(()=>{
+        setColorToText('X');
+    },2000)
 }
 
 const setColorToText = (flag) => {
+    const colorBlack = 'color:black'
+    const divScoreUser = document.getElementsByClassName(`score-user`)[0];
+    const divScoreComputer = document.getElementsByClassName(`score-computer`)[0];
+
     if(flag === 'X') {
-        document.getElementsByClassName(`score-user`)[0].style = 'color:black';
+        if(divScoreComputer.style) divScoreComputer.style = '';
+        document.getElementsByClassName(`score-user`)[0].style = colorBlack;
     } else {
-        document.getElementsByClassName(`score-user`)[0].style = ''
+        if(divScoreUser.style) divScoreUser.style = '';
+        document.getElementsByClassName(`score-computer`)[0].style = colorBlack;
     }
 }
