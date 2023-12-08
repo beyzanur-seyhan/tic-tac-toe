@@ -46,6 +46,9 @@ h1 {
 }
 
 main {
+    width: 273px;
+    margin-right: auto;
+    margin-left: auto;
     background-color: #00A193;
     margin-top: 54px;
     margin-bottom: 46px;
@@ -60,18 +63,63 @@ main div {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
-main div:nth-child(1), 
-main div:nth-child(4), 
-main div:nth-child(7) {
+main > div:nth-child(1), 
+main > div:nth-child(4), 
+main > div:nth-child(7) {
     border-left: none;
 }
 
-main div:nth-child(7), 
-main div:nth-child(8), 
-main div:nth-child(9) {
+main div:first-child(7), 
+main div:first-child(8), 
+main div:first-child(9) {
     border-bottom: none;
+}
+
+main .vertical-line, main .horizontal-line {
+    position: absolute;
+}
+
+main .vertical-line {
+    width: 8px;
+    height: 106px;
+    background-color: #383636;
+}
+
+main .horizontal-line {
+    width: 95px;
+    height: 8px;
+    background-color: #FFFFFF;
+}
+
+main div:nth-child(1) .vertical-line, 
+main div:nth-child(2) .vertical-line, 
+main div:nth-child(3) .vertical-line {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+main div:nth-child(7) .vertical-line, 
+main div:nth-child(8) .vertical-line, 
+main div:nth-child(9) .vertical-line {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+main div:nth-child(1) .horizontal-line, 
+main div:nth-child(4) .horizontal-line, 
+main div:nth-child(7) .horizontal-line {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+main div:nth-child(3) .horizontal-line, 
+main div:nth-child(6) .horizontal-line, 
+main div:nth-child(9) .horizontal-line {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .round {
