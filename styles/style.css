@@ -66,20 +66,13 @@ main div {
     position: relative;
 }
 
-main > div:nth-child(1), 
-main > div:nth-child(4), 
-main > div:nth-child(7) {
-    border-left: none;
-}
-
-main div:first-child(7), 
-main div:first-child(8), 
-main div:first-child(9) {
-    border-bottom: none;
+main .cell img {
+    width: 67px;
 }
 
 main .vertical-line, main .horizontal-line {
     position: absolute;
+    display: none;
 }
 
 main .vertical-line {
