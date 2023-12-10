@@ -1,12 +1,17 @@
 let v = 0;
+let scoreUser = 0;
+let scoreComputer = 0;
+
 const cellValues = [];
 const divScoreUser = document.getElementById('score-user');
 const divScoreComputer = document.getElementById('score-computer');
 
-divScoreUser.textContent = 0;
-divScoreComputer.textContent = 0;
+divScoreUser.textContent = scoreUser;
+divScoreComputer.textContent = scoreComputer;
 
 const createFlag = (order,flag='X') => {
+    console.log(cellValues)
+    v = 0;
     setColorToText(flag); 
     if(cellValues[order]) return;
 
@@ -18,6 +23,7 @@ const createFlag = (order,flag='X') => {
 
     imageTag.src = `image/shape-${flag}.svg`;
     selectedCell.appendChild(imageTag);
+    selectedCell.removeAttribute('onclick');
     addPointToWinner();
 }
 
@@ -59,14 +65,18 @@ const setColorToText = (flag) => {
         document.getElementsByClassName(`score-computer`)[0].style = colorBlack;
     }
 }
-
+// h -> horizontal
+// v -> vertical
 const addPointToWinner = () => {
     for (let h = 0; h < 9; h += 3) {
         if(findWinner('X',h,v) == 'X') {
           console.log('You are win');
+          scoreUser += 1;
+          divScoreUser.textContent = scoreUser;
           return;
         } else if(findWinner('O',h,v) == 'O') {
             console.log('Computer is win');
+            divScoreComputer.textContent = scoreUser;
             return;
         } 
         v++;
@@ -74,13 +84,17 @@ const addPointToWinner = () => {
 }
 
 const findWinner = (flag,h,v) => {
-    if((cellValues[h] == `${flag}` && 
-    cellValues[h + 1] == `${flag}` && 
-    cellValues[h + 2] == `${flag}`) || 
-    (cellValues[v] == `${flag}` && 
-    cellValues[v + 3] == `${flag}` && 
-    cellValues[v + 6] == `${flag}`)) {
+    if((cellValues[h] == `${flag}` && cellValues[h + 1] == `${flag}` && cellValues[h + 2] == `${flag}`) || 
+    (cellValues[v] == `${flag}` && cellValues[v + 3] == `${flag}` && cellValues[v + 6] == `${flag}`) || 
+    (cellValues[2] == `${flag}` && cellValues[4] == `${flag}` && cellValues[8] == `${flag}`) || 
+    (cellValues[0] == `${flag}` && cellValues[4] == `${flag}` && cellValues[8] == `${flag}`)) {
         v = 0;
         return flag;
+    }
+}
+
+const removeSpecificEl = (removalFromIndex) => {
+    for(const i of removalFromIndex.reverse()) {
+        cellValues.splice(i,1);
     }
 }
