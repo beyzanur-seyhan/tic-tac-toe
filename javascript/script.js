@@ -70,13 +70,16 @@ const setColorToText = (flag) => {
 const addPointToWinner = () => {
     for (let h = 0; h < 9; h += 3) {
         if(findWinner('X',h,v) == 'X') {
+          v = 0;
           console.log('You are win');
           scoreUser += 1;
           divScoreUser.textContent = scoreUser;
           return;
         } else if(findWinner('O',h,v) == 'O') {
+            v = 0;
             console.log('Computer is win');
-            divScoreComputer.textContent = scoreUser;
+            scoreComputer += 1;
+            divScoreComputer.textContent = scoreComputer;
             return;
         } 
         v++;
@@ -84,17 +87,23 @@ const addPointToWinner = () => {
 }
 
 const findWinner = (flag,h,v) => {
-    if((cellValues[h] == `${flag}` && cellValues[h + 1] == `${flag}` && cellValues[h + 2] == `${flag}`) || 
-    (cellValues[v] == `${flag}` && cellValues[v + 3] == `${flag}` && cellValues[v + 6] == `${flag}`) || 
-    (cellValues[2] == `${flag}` && cellValues[4] == `${flag}` && cellValues[8] == `${flag}`) || 
-    (cellValues[0] == `${flag}` && cellValues[4] == `${flag}` && cellValues[8] == `${flag}`)) {
-        v = 0;
-        return flag;
+    if((cellValues[h] == `${flag}` && cellValues[h + 1] == `${flag}` && cellValues[h + 2] == `${flag}`)) {
+       return removeSpecificEl([h, h + 1, h + 2], flag);
     }
+    if((cellValues[v] == `${flag}` && cellValues[v + 3] == `${flag}` && cellValues[v + 6] == `${flag}`)) {
+       return removeSpecificEl([v, v + 3, v + 6], flag);
+    }
+    if((cellValues[2] == `${flag}` && cellValues[4] == `${flag}` && cellValues[8] == `${flag}`)) {
+       return removeSpecificEl([2, 4, 6], flag);
+    } 
+    if((cellValues[0] == `${flag}` && cellValues[4] == `${flag}` && cellValues[8] == `${flag}`)) {
+       return removeSpecificEl([0, 4, 8], flag);
+    } 
 }
 
-const removeSpecificEl = (removalFromIndex) => {
+const removeSpecificElement = (removalFromIndex, flag) => {
     for(const i of removalFromIndex.reverse()) {
         cellValues.splice(i,1);
     }
+    return flag;
 }
